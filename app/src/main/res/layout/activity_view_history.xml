@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecomendationActivity">
+    tools:context=".ViewHistoryActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/container1"
@@ -100,15 +100,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:text="98%"
-                    android:textSize="25dp"
-                    android:fontFamily="@font/kronaone"
-                    android:textColor="@color/white"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="98%"
+                android:textSize="25dp"
+                android:fontFamily="@font/kronaone"
+                android:textColor="@color/white"/>
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
@@ -172,6 +172,9 @@
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
+
+
+
 
 
 </RelativeLayout>

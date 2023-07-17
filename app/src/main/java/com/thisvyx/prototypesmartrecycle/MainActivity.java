@@ -2,6 +2,7 @@ package com.thisvyx.prototypesmartrecycle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.Manifest;
 import android.content.Intent;
@@ -27,7 +28,8 @@ import java.nio.ByteOrder;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView result, confidence;
+    CardView btnNavSolution;
+    TextView result, confidence, solution, penjelasanSampah, jenisSampah;
 
     private String hasil_deteksi;
     ImageView imageView;
@@ -39,14 +41,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        result = findViewById(R.id.result);
-        confidence = findViewById(R.id.confidence);
+        result = findViewById(R.id.resultClassified);
+//        confidence = findViewById(R.id.resultConfidence);
         imageView = findViewById(R.id.imageView);
-        picture = findViewById(R.id.button);
-
-        picture.setOnClickListener(new View.OnClickListener() {
+//        picture = findViewById(R.id.button);
+        btnNavSolution = findViewById(R.id.btn_nav_solusi);
+        btnNavSolution.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent;
+                intent =new Intent(MainActivity.this ,RecomendationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //solusi
+//        solution = findViewById(R.id.resultSolution);
+
+//        picture.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
                 // Launch camera if we have permission
                 if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                     Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -55,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
                     //Request camera permission if we don't have it.
                     requestPermissions(new String[]{Manifest.permission.CAMERA}, 100);
                 }
-            }
-        });
+//            }
+//        });
 
     }
 
@@ -100,14 +114,18 @@ public class MainActivity extends AppCompatActivity {
             String[] classes = {"Kardus", "Kaca", "Logam", "Kertas", "Plastik", "Sampah"};
 
             result.setText(classes[maxPos]);
-            hasil_deteksi = classes[maxPos];
+//            hasil_deteksi = classes[maxPos];
+//
+//            if (hasil_deteksi == "kardus"){
+//
+//            }
 
             String s = "";
             for(int i = 0; i < classes.length; i++){
                 s += String.format("%s: %.1f%%\n", classes[i], confidences[i] * 100);
             }
 
-            confidence.setText(s);
+//            confidence.setText(s);
 
             // Releases model resources if no longer used.
             model.close();

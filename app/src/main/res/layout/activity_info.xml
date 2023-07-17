@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InfoActivity">
+
+    <androidx.cardview.widget.CardView
+        android:translationZ="90dp"
+        android:id="@+id/container1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/hijau_tua">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginLeft="30dp"
+            android:text="Eksperimen"
+            android:textSize="25dp"
+            android:textColor="@color/white"/>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/container2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="30dp"
+        app:cardBackgroundColor="@color/primary">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/judul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_marginLeft="25dp"
+                android:text="Cara Penggunaan"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/hijau_tua"
+                android:fontFamily="@font/kronaone"/>
+
+            <ImageView
+                android:id="@+id/logo_di_home"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/gambar_di_info"
+                android:layout_below="@+id/judul"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/container2"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="1. Melakukan Scan"
+            android:textStyle="bold"
+            android:textColor="@color/hijau_tua"
+            android:textSize="18dp"
+            android:fontFamily="@font/kronaone"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Klik Tombol kamera yang berada di tengah lalu arahkan benda apa yang akan di scan"
+            android:textSize="14dp"
+            android:textColor="@color/hijau_tua"
+            android:fontFamily="@font/kronaone"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="2. Melihat Hasil"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/hijau_tua"
+            android:fontFamily="@font/kronaone"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Klik tombol selanjutnya untuk melihat jenis sampah dan cara mendaur ulang sampah. "
+            android:textSize="14dp"
+            android:textColor="@color/hijau_tua"
+            android:fontFamily="@font/kronaone"/>
+
+    </LinearLayout>
+</RelativeLayout>
