@@ -28,6 +28,8 @@ import java.nio.ByteOrder;
 public class MainActivity extends AppCompatActivity {
 
     TextView result, confidence;
+
+    private String hasil_deteksi;
     ImageView imageView;
     Button picture;
     int imageSize = 224;
@@ -95,9 +97,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            String[] classes = {"botol", "kardus", "DVD"};
+            String[] classes = {"Kardus", "Kaca", "Logam", "Kertas", "Plastik", "Sampah"};
 
             result.setText(classes[maxPos]);
+            hasil_deteksi = classes[maxPos];
 
             String s = "";
             for(int i = 0; i < classes.length; i++){
@@ -127,4 +130,5 @@ public class MainActivity extends AppCompatActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
 }
